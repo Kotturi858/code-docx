@@ -1,3 +1,19 @@
+<label for="title bg-dark" style="color: aliceblue">Title Name</label
+><input type="text" name="title" id="title" />
+<label for="title text-light" style="color: aliceblue">select font size</label
+><input
+  type="range"
+  name="title"
+  id="title"
+  min="12"
+  max="36"
+  step="2"
+  [(ngModel)]="rangeValue"
+/>
+<p style="color: aliceblue">Selected Value: {{ rangeValue }}</p>
+<label for="title text-light" style="color: aliceblue">select font </label
+><input type="radio" name="title" id="title" />
+
 <textarea
   class="bg-dark text-light"
   name="codeSpace"

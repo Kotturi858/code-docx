@@ -26,6 +26,7 @@ import { saveAs } from 'file-saver';
 export class AppComponent {
   coded!: string;
   size: number = 12;
+  rangeValue = 12;
 
   generateDocx() {
     const tableData = this.coded.split('\n').map((e) => [e]);
