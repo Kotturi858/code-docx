@@ -3,22 +3,19 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import {
+  AlignmentType,
+  BorderStyle,
   Document,
   Packer,
   Paragraph,
+  ShadingType,
   Table,
   TableCell,
   TableRow,
-  WidthType,
   TextRun,
-  TableBorders,
-  BorderStyle,
-  ShadingType,
-  AlignmentType,
-  Indent,
+  WidthType,
 } from 'docx';
 import { saveAs } from 'file-saver';
-import PizZip from 'pizzip';
 
 @Component({
   selector: 'app-root',
@@ -28,16 +25,10 @@ import PizZip from 'pizzip';
 })
 export class AppComponent {
   coded!: string;
+  size: number = 12;
 
   generateDocx() {
-    const tableData = [
-      [
-        'for (var i = 2; primeArray.length < numPrimes; primeArray.length < numPrimes; i++) { ',
-      ],
-      ['    PrimeCheck(i); //'],
-      ['}'],
-      ['  for(var i = 2; i < candidate && isPrime; i++){'],
-    ];
+    const tableData = this.coded.split('\n').map((e) => [e]);
 
     const tableRows = tableData.map(
       (row, index) =>
@@ -56,8 +47,8 @@ export class AppComponent {
                       new TextRun({
                         text: cell,
                         font: 'Courier New',
-                        size: 24,
-                        noProof : true,
+                        size: this.size, // 24 means 12pt
+                        noProof: true,
                       }),
                     ],
                     alignment: AlignmentType.LEFT,

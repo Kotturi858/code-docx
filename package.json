@@ -20,10 +20,7 @@
     "@angular/router": "^19.0.0",
     "bootstrap": "^5.3.3",
     "docx": "^9.1.1",
-    "docxtemplater": "^3.59.0",
     "file-saver": "^2.0.5",
-    "jszip": "^3.10.1",
-    "pizzip": "^3.1.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
